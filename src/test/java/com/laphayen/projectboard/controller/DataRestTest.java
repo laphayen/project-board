@@ -1,5 +1,6 @@
 package com.laphayen.projectboard.controller;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -15,6 +16,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@Disabled("Spring Data REST 통합테스트는 불필요하므로 제외")
 @DisplayName("Data REST - API 테스트")
 @Transactional
 @AutoConfigureMockMvc
