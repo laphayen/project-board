@@ -1,4 +1,4 @@
-package com.laphayen.projectboard.domain.type;
+package com.laphayen.projectboard.domain.constant;
 
 import lombok.Getter;
 
