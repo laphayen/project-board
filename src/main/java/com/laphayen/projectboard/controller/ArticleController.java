@@ -1,6 +1,7 @@
 package com.laphayen.projectboard.controller;
 
 import com.laphayen.projectboard.domain.constant.FormStatus;
+import com.laphayen.projectboard.domain.constant.SearchType;
 import com.laphayen.projectboard.dto.UserAccountDto;
 import com.laphayen.projectboard.dto.request.ArticleRequest;
 import com.laphayen.projectboard.dto.response.ArticleResponse;

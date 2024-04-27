@@ -2,7 +2,7 @@ package com.laphayen.projectboard.service;
 
 import com.laphayen.projectboard.domain.Article;
 import com.laphayen.projectboard.domain.UserAccount;
-import com.laphayen.projectboard.domain.constant.FormStatus;
+import com.laphayen.projectboard.domain.constant.SearchType;
 import com.laphayen.projectboard.dto.ArticleDto;
 import com.laphayen.projectboard.dto.ArticleWithCommentsDto;
 import com.laphayen.projectboard.repository.ArticleRepository;
@@ -27,7 +27,7 @@ public class ArticleService {
     private final UserAccountRepository userAccountRepository;
 
     @Transactional(readOnly = true)
-    public Page<ArticleDto> searchArticles(FormStatus.SearchType searchType, String searchKeyword, Pageable pageable) {
+    public Page<ArticleDto> searchArticles(SearchType searchType, String searchKeyword, Pageable pageable) {
         if (searchKeyword == null || searchKeyword.isBlank()) {
             return articleRepository.findAll(pageable).map(ArticleDto::from);
         }
@@ -69,7 +69,6 @@ public class ArticleService {
         } catch (EntityNotFoundException e) {
             log.warn("게시글 업데이트 실패. 게시글을 찾을 수 없습니다 - dto: {}", dto);
         }
-
     }
 
     public void deleteArticle(long articleId) {
