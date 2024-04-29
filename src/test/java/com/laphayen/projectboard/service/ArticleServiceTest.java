@@ -3,6 +3,7 @@ package com.laphayen.projectboard.service;
 import com.laphayen.projectboard.domain.Article;
 import com.laphayen.projectboard.domain.UserAccount;
 import com.laphayen.projectboard.domain.constant.FormStatus;
+import com.laphayen.projectboard.domain.constant.SearchType;
 import com.laphayen.projectboard.dto.ArticleDto;
 import com.laphayen.projectboard.dto.ArticleWithCommentsDto;
 import com.laphayen.projectboard.dto.UserAccountDto;
@@ -56,7 +57,7 @@ class ArticleServiceTest {
     @Test
     void givenSearchParameters_whenSearchingArticles_thenReturnsArticlePage() {
         // Given
-        FormStatus.SearchType searchType = FormStatus.SearchType.TITLE;
+        SearchType searchType = SearchType.TITLE;
         String searchKeyword = "title";
         Pageable pageable = Pageable.ofSize(20);
         given(articleRepository.findByTitleContaining(searchKeyword, pageable)).willReturn(Page.empty());

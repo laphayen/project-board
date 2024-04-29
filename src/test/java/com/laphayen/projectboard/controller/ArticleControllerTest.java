@@ -2,6 +2,7 @@ package com.laphayen.projectboard.controller;
 
 import com.laphayen.projectboard.config.SecurityConfig;
 import com.laphayen.projectboard.domain.constant.FormStatus;
+import com.laphayen.projectboard.domain.constant.SearchType;
 import com.laphayen.projectboard.dto.ArticleDto;
 import com.laphayen.projectboard.dto.request.ArticleRequest;
 import com.laphayen.projectboard.dto.response.ArticleResponse;
@@ -28,6 +29,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
+import static com.laphayen.projectboard.domain.constant.FormStatus.UPDATE;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.BDDMockito.*;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
@@ -77,7 +79,7 @@ class ArticleControllerTest {
     @Test
     public void givenSearchKeyword_whenSearchingArticlesView_thenReturnsArticlesView() throws Exception {
         // Given
-        FormStatus.SearchType searchType = FormStatus.SearchType.TITLE;
+        SearchType searchType = SearchType.TITLE;
         String searchValue = "title";
         given(articleService.searchArticles(eq(searchType), eq(searchValue), any(Pageable.class))).willReturn(Page.empty());
         given(paginationService.getPaginationBarNumbers(anyInt(), anyInt())).willReturn(List.of(0, 1, 2, 3, 4));
@@ -178,7 +180,7 @@ class ArticleControllerTest {
                 .andExpect(model().attribute("articles", Page.empty()))
                 .andExpect(model().attribute("hashtags", hashtags))
                 .andExpect(model().attributeExists("paginationBarNumbers"))
-                .andExpect(model().attribute("searchType", FormStatus.SearchType.HASHTAG));
+                .andExpect(model().attribute("searchType", SearchType.HASHTAG));
         then(articleService).should().searchArticlesViaHashtag(eq(null), any(Pageable.class));
         then(articleService).should().getHashtags();
         then(paginationService).should().getPaginationBarNumbers(anyInt(), anyInt());
@@ -206,7 +208,7 @@ class ArticleControllerTest {
                 .andExpect(model().attribute("articles", Page.empty()))
                 .andExpect(model().attribute("hashtags", hashtags))
                 .andExpect(model().attributeExists("paginationBarNumbers"))
-                .andExpect(model().attribute("searchType", FormStatus.SearchType.HASHTAG));
+                .andExpect(model().attribute("searchType", SearchType.HASHTAG));
         then(articleService).should().searchArticlesViaHashtag(eq(hashtag), any(Pageable.class));
         then(articleService).should().getHashtags();
         then(paginationService).should().getPaginationBarNumbers(anyInt(), anyInt());
@@ -260,7 +262,7 @@ class ArticleControllerTest {
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
                 .andExpect(view().name("articles/form"))
                 .andExpect(model().attribute("article", ArticleResponse.from(dto)))
-                .andExpect(model().attribute("formStatus", FormStatus.UPDATE));
+                .andExpect(model().attribute("formStatus", UPDATE));
         then(articleService).should().getArticle(articleId);
     }
 
