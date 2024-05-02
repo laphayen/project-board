@@ -2,13 +2,13 @@
 -- TODO: 테스트용으로 비밀번호가 노출.
 insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at,
                           modified_by)
-values ('laphayen1', 'qwer1234', 'laphayen1', 'laphayen1@mail.com', 'I am laphayen1.', now(), 'laphayen1', now(),
+values ('laphayen1', '{noop}qwer1234', 'laphayen1', 'laphayen1@mail.com', 'I am laphayen1.', now(), 'laphayen1', now(),
         'laphayen1')
 ;
 
 insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at,
                           modified_by)
-values ('laphayen2', 'qwer1234', 'laphayen2', 'laphayen2@mail.com', 'I am laphayen2.', now(), 'laphayen2', now(),
+values ('laphayen2', '{noop}qwer1234', 'laphayen2', 'laphayen2@mail.com', 'I am laphayen2.', now(), 'laphayen2', now(),
         'laphayen2')
 ;
 
