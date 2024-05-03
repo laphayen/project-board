@@ -24,10 +24,11 @@ public class SecurityConfig {
                .authorizeHttpRequests(auth -> auth
                        .requestMatchers(String.valueOf(PathRequest.toStaticResources().atCommonLocations())).permitAll()
                        .requestMatchers(
-                                HttpMethod.GET,
-                                "/",
-                                "/articles",
-                                "/articles/search-hashtag"
+                               HttpMethod.GET,
+                               "/",
+                               "/articles",
+                               "/articles/search-hashtag",
+                               "/css/**","/scripts/**","/plugin/**","/fonts/**"
                        ).permitAll()
                        .anyRequest().authenticated()
                )
