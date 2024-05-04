@@ -2,6 +2,10 @@
 
 게시판 기능을 구현한 서비스입니다. 스프링 부트와 관련 기술을 사용해서 만들었습니다.
 
+### 데모 페이지
+
+https://project-board-laphayen-df438c5d1def.herokuapp.com/
+
 * * *
 
 ### 개발 환경
