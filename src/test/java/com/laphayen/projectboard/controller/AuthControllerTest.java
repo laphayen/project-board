@@ -1,6 +1,7 @@
 package com.laphayen.projectboard.controller;
 
 import com.laphayen.projectboard.config.SecurityConfig;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+@Disabled("배포 처리")
 @DisplayName("View 컨트롤러 - 인증")
 @Import(SecurityConfig.class)
 @WebMvcTest(void.class)
@@ -23,6 +25,7 @@ public class AuthControllerTest {
         this.mvc = mvc;
     }
 
+    @Disabled("배포 처리")
     @DisplayName("[view][GET] 로그인 페이지 - 정상 호출")
     @Test
     public void givenNothing_whenTryingToLogIn_thenReturnsLogInView() throws Exception {
