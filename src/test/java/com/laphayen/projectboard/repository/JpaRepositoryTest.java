@@ -1,6 +1,5 @@
 package com.laphayen.projectboard.repository;
 
-import com.laphayen.projectboard.config.JpaConfig;
 import com.laphayen.projectboard.domain.Article;
 import com.laphayen.projectboard.domain.UserAccount;
 import org.junit.jupiter.api.DisplayName;

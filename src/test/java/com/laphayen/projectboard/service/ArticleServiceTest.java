@@ -2,7 +2,6 @@ package com.laphayen.projectboard.service;
 
 import com.laphayen.projectboard.domain.Article;
 import com.laphayen.projectboard.domain.UserAccount;
-import com.laphayen.projectboard.domain.constant.FormStatus;
 import com.laphayen.projectboard.domain.constant.SearchType;
 import com.laphayen.projectboard.dto.ArticleDto;
 import com.laphayen.projectboard.dto.ArticleWithCommentsDto;

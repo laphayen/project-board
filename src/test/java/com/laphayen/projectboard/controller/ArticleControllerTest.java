@@ -1,6 +1,5 @@
 package com.laphayen.projectboard.controller;
 
-import com.laphayen.projectboard.config.SecurityConfig;
 import com.laphayen.projectboard.config.TestSecurityConfig;
 import com.laphayen.projectboard.domain.constant.FormStatus;
 import com.laphayen.projectboard.domain.constant.SearchType;
