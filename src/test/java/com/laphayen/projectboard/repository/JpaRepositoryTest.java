@@ -1,6 +1,5 @@
 package com.laphayen.projectboard.repository;
 
-import com.laphayen.projectboard.config.JpaConfig;
 import com.laphayen.projectboard.domain.Article;
 import com.laphayen.projectboard.domain.UserAccount;
 import org.junit.jupiter.api.DisplayName;
@@ -28,7 +27,7 @@ class JpaRepositoryTest {
 
     private final UserAccountRepository userAccountRepository;
 
-    public JpaRepositoryTest(
+    JpaRepositoryTest(
             @Autowired ArticleRepository articleRepository,
             @Autowired ArticleCommentRepository articleCommentRepository,
             @Autowired UserAccountRepository userAccountRepository
@@ -100,9 +99,9 @@ class JpaRepositoryTest {
 
     @EnableJpaAuditing
     @TestConfiguration
-    public static class TestJpaConfig {
+    static class TestJpaConfig {
         @Bean
-        public AuditorAware<String> auditorAware() {
+        AuditorAware<String> auditorAware() {
             return () -> Optional.of("laphayen");
         }
     }

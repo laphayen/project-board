@@ -3,7 +3,6 @@ package com.laphayen.projectboard.dto.response;
 
 import com.laphayen.projectboard.dto.ArticleWithCommentsDto;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.LinkedHashSet;
 import java.util.Set;

@@ -2,7 +2,6 @@ package com.laphayen.projectboard.dto.response;
 
 import com.laphayen.projectboard.dto.ArticleCommentDto;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 public record ArticleCommentResponse(
